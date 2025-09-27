@@ -1,0 +1,211 @@
+/* ======= RESET ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ======= BODY ======= */
+body {
+    padding: 20px;
+    color: #222;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header h1 {
+    width: 700px;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* ======= GRID DE QUARTOS ======= */
+.quartos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+.add-room-section{
+    background-color: #f0f2f5;
+    box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* ======= QUARTO CARD ======= */
+.quarto-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.quarto-card:hover {
+    background: #f0f2f5;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Efeito ao clicar */
+.quarto-card:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ======= CABEÇALHO DO CARD ======= */
+.quarto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quarto-header h3 {
+    font-size: 1.1rem;
+}
+
+/* ======= STATUS ======= */
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.ocupado .status {
+    background: #6b7280;
+    /* Cinza */
+}
+
+.disponivel .status {
+    background: #38a169;
+    /* Verde */
+}
+
+    
+
+/* ======= CORPO DO CARD ======= */
+.quarto-body {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.quarto-body p {
+    margin-top: 4px;
+}
+
+/* ======= LEGENDA ======= */
+footer {
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.legend div {
+    margin-top: 8px;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.legend-box.disponivel {
+    background: #d4f3d4;
+}
+
+.legend-box.area-fixa {
+    background: #d0e7ff;
+}
+
+.legend-box.nao-compartilhar {
+    background: #ffe0e0;
+}
+
+.legend-box.restrito {
+    background: #fff5cc;
+}
+
+/* ======= GÊNERO ======= */
+.Masculino {
+    border-left: 5px solid #3b82f6; /* Azul */
+    padding-left: 10px;
+}
+.Feminino {
+    border-left: 5px solid #ec4899; /* Rosa */
+    padding-left: 10px;
+}
+
+
+/* ======= ÁREAS ESPECIAIS ======= */
+.disponivel {
+    background: #aafdc17b;
+}
+
+.ocupado {
+    background: #f5e48d8c;
+}
+
+.restrito {
+    background: #d7212196;
+}
+
+.add-room-section {
+background:#fff; padding:14px; border-radius:8px; margin-bottom:18px;
+box-shadow:0 2px 6px rgba(0,0,0,0.04);
+}
+.add-room-section form { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.add-room-section input, .add-room-section select {
+padding:8px; border-radius:6px; border:1px solid #d6d9dd; min-width:150px; flex:1 1 160px;
+}
+.add-room-section button {
+background:#2ea44f; color:white; border:none; padding:9px 14px; border-radius:6px; cursor:pointer;
+}
+.add-room-section button:hover { opacity:0.95; }
+
+/* ==== AREA PRICIPAL ==== */
+
+.home{
+    transition: margin-left 0.3s ease;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #2564ebab;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 1001;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.home:hover {
+    background: #1d4ed8;
+}
+
+.header-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

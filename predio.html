@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Leitos Disponíveis</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Visualização do Prédio - Leitos Disponíveis</h1>
+                
+                <a href="index.html" ><button class="home">Volta inicio</button></a>
+                
+            </header>
+
+            <section class="add-room-section">
+                <h2>Adicionar Novo Quarto</h2>
+                <form id="addRoomForm">
+                    <input id="quartoId" type="text" placeholder="ID do Quarto (ex: 501A)" required />
+                    <input id="setor" type="text" placeholder="Setor (ex: Cirurgia)" required />
+                    <select id="tipo" required>
+                        <option value="">Tipo</option>
+                        <option value="Comum">Comum</option>
+                        <option value="Isolamento">Isolamento</option>
+                        <option value="Pós-operatório">Pós-operatório</option>
+                        <option value="Crítico">Crítico (UTI)</option>
+                    </select>
+                    <select id="genero" required>
+                        <option value="">Gênero</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                    <button type="submit">Adicionar</button>
+                </form>
+            </section>
+
+            <main>
+                <div class="quartos-grid">
+                    <!-- Card de quarto -->
+                    <div class="quarto-card ocupado Masculino">
+                        <div class="quarto-header">
+                            <h3>Quarto 101A</h3>
+                            <span class="status">Ocupado</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Pulmão</strong></p>
+                            <p>Tipo: Isolamento</p>
+                            <p>Gênero: Masculino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 101B - Disponível -->
+                    <div class="quarto-card disponivel Masculino">
+                        <div class="quarto-header">
+                            <h3>Quarto 101B</h3>
+                            <span class="status">Disponível</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Pulmão</strong></p>
+                            <p>Tipo: Comum</p>
+                            <p>Gênero: Masculino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 102A - Ocupado -->
+                    <div class="quarto-card ocupado Feminino">
+                        <div class="quarto-header">
+                            <h3>Quarto 102A</h3>
+                            <span class="status">Ocupado</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Pulmão</strong></p>
+                            <p>Tipo: Isolamento</p>
+                            <p>Gênero: Feminino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 201A - Disponível (Dor) -->
+                    <div class="quarto-card disponivel Feminino comum">
+                        <div class="quarto-header">
+                            <h3>Quarto 201A</h3>
+                            <span class="status">Disponível</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Dor</strong></p>
+                            <p>Tipo: Comum</p>
+                            <p>Gênero: Feminino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 202B - Ocupado (Coração) -->
+                    <div class="quarto-card ocupado Masculino isolamento">
+                        <div class="quarto-header">
+                            <h3>Quarto 202B</h3>
+                            <span class="status">Ocupado</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Coração</strong></p>
+                            <p>Tipo: Isolamento</p>
+                            <p>Gênero: Masculino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 301A - Disponível (Coração) -->
+                    <div class="quarto-card disponivel Masculino comum">
+                        <div class="quarto-header">
+                            <h3>Quarto 301A</h3>
+                            <span class="status">Disponível</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Coração</strong></p>
+                            <p>Tipo: Comum</p>
+                            <p>Gênero: Masculino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 302B - Ocupado (Oncologia) -->
+                    <div class="quarto-card ocupado Feminino isolamento">
+                        <div class="quarto-header">
+                            <h3>Quarto 302B</h3>
+                            <span class="status">Ocupado</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Oncologia</strong></p>
+                            <p>Tipo: Isolamento</p>
+                            <p>Gênero: Feminino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 401A - UTI (Disponível) -->
+                    <div class="quarto-card disponivel Feminino especial">
+                        <div class="quarto-header">
+                            <h3>Quarto 401A</h3>
+                            <span class="status">Disponível</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>UTI</strong></p>
+                            <p>Tipo: Especial</p>
+                            <p>Gênero: Feminino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 401B - UTI (Ocupado) -->
+                    <div class="quarto-card ocupado Masculino especial">
+                        <div class="quarto-header">
+                            <h3>Quarto 401B</h3>
+                            <span class="status">Ocupado</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>UTI</strong></p>
+                            <p>Tipo: Especial</p>
+                            <p>Gênero: Masculino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 501A - Disponível (Pulmão) -->
+                    <div class="quarto-card disponivel Masculino comum">
+                        <div class="quarto-header">
+                            <h3>Quarto 501A</h3>
+                            <span class="status">Disponível</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Pulmão</strong></p>
+                            <p>Tipo: Comum</p>
+                            <p>Gênero: Masculino</p>
+                        </div>
+                    </div>
+
+                    <!-- Quarto 502B - Ocupado (Dor) -->
+                    <div class="quarto-card ocupado Feminino isolamento">
+                        <div class="quarto-header">
+                            <h3>Quarto 502B</h3>
+                            <span class="status">Ocupado</span>
+                        </div>
+                        <div class="quarto-body">
+                            <p><strong>Dor</strong></p>
+                            <p>Tipo: Isolamento</p>
+                            <p>Gênero: Feminino</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Adicione outros quartos copiando os cards acima -->
+                </div>
+            </main>
+
+            <!-- Legenda -->
+            <footer>
+                <div class="legend">
+                    <h3>Legenda:</h3>
+                    <div><span class="legend-box disponivel"></span> Disponível</div>
+                    <div><span class="legend-box area-fixa"></span> Área fixa (UTI/Oncologia)</div>
+                    <div><span class="legend-box nao-compartilhar"></span> Não pode compartilhar (isolamento)</div>
+                    <div><span class="legend-box restrito"></span> Pode compartilhar com restrições</div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
