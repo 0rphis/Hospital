@@ -38,15 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.innerHTML = `
         <div class="quarto-header">
-          <h3>Quarto ${escapeHtml(quarto.id)}</h3>
-          <span class="quarto-status ${statusClass}">${escapeHtml(quarto.status)}</span>
+        <h3>Quarto ${escapeHtml(quarto.id)}</h3>
+        <span class="quarto-status ${statusClass}">${escapeHtml(quarto.status)}</span>
         </div>
         <div class="quarto-body">
-          <p><strong>${escapeHtml(quarto.setor)}</strong></p>
-          <p>Tipo: ${escapeHtml(quarto.tipo)}</p>
-          <p>Gênero: ${escapeHtml(quarto.genero)}</p>
+        <p><strong>${escapeHtml(quarto.setor)}</strong></p>
+        <p>Tipo: ${escapeHtml(quarto.tipo)}</p>
+        <p>Gênero: ${escapeHtml(quarto.genero)}</p>
         </div>
-      `;
+    `;
 
             // clicar no card alterna status (útil para testar)
             card.addEventListener('click', () => {
@@ -131,4 +131,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // demo: alternar status a cada 8s (comente se não quiser)
     // setInterval(updateRandomStatusDemo, 8000);
+});
+
+
+
+const btnFiltroDisponiveis = document.getElementById("filtroDisponiveis");
+const btnMostrarTodos = document.getElementById("mostrarTodos");
+
+// Seleciona todos os cards de quartos
+const quartos = document.querySelectorAll(".quarto-card");
+
+// Função para mostrar apenas os disponíveis
+btnFiltroDisponiveis.addEventListener("click", () => {
+    quartos.forEach(quarto => {
+        if (quarto.classList.contains("disponivel")) {
+            quarto.style.display = "block";  // mantém visível
+        } else {
+            quarto.style.display = "none";   // esconde
+        }
+    });
+});
+
+// Função para mostrar todos os quartos
+btnMostrarTodos.addEventListener("click", () => {
+    quartos.forEach(quarto => {
+        quarto.style.display = "block"; // mostra todos novamente
+    });
 });

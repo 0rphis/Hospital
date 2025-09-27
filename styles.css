@@ -30,9 +30,17 @@ header h1 {
     gap: 15px;
 }
 
-.add-room-section{
+.add-room-section form {
+    display: flex;
+
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.add-room-section {
     background-color: #f0f2f5;
-    box-shadow:0 2px 6px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 /* ======= QUARTO CARD ======= */
@@ -88,7 +96,7 @@ header h1 {
     /* Verde */
 }
 
-    
+
 
 /* ======= CORPO DO CARD ======= */
 .quarto-body {
@@ -139,22 +147,26 @@ footer {
 
 /* ======= GÊNERO ======= */
 .Masculino {
-    border-left: 5px solid #3b82f6; /* Azul */
+    border-left: 5px solid #3b82f6;
+    /* Azul */
     padding-left: 10px;
 }
+
 .Feminino {
-    border-left: 5px solid #ec4899; /* Rosa */
+    border-left: 5px solid #ec4899;
+    /* Rosa */
     padding-left: 10px;
 }
 
 
 /* ======= ÁREAS ESPECIAIS ======= */
 .disponivel {
+    order: -1;
     background: #aafdc17b;
 }
 
 .ocupado {
-    background: #f5e48d8c;
+    background: #ff5656b4;
 }
 
 .restrito {
@@ -162,21 +174,45 @@ footer {
 }
 
 .add-room-section {
-background:#fff; padding:14px; border-radius:8px; margin-bottom:18px;
-box-shadow:0 2px 6px rgba(0,0,0,0.04);
+    background: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
-.add-room-section form { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-.add-room-section input, .add-room-section select {
-padding:8px; border-radius:6px; border:1px solid #d6d9dd; min-width:150px; flex:1 1 160px;
+
+.add-room-section form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
 }
+
+.add-room-section input,
+.add-room-section select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #d6d9dd;
+    min-width: 150px;
+    flex: 1 1 160px;
+}
+
 .add-room-section button {
-background:#2ea44f; color:white; border:none; padding:9px 14px; border-radius:6px; cursor:pointer;
+    background: #2ea44f;
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    cursor: pointer;
 }
-.add-room-section button:hover { opacity:0.95; }
+
+.add-room-section button:hover {
+    opacity: 0.95;
+}
 
 /* ==== AREA PRICIPAL ==== */
 
-.home{
+.home {
     transition: margin-left 0.3s ease;
     position: fixed;
     top: 20px;
@@ -203,9 +239,82 @@ background:#2ea44f; color:white; border:none; padding:9px 14px; border-radius:6p
     background: #1d4ed8;
 }
 
-.header-buttons{
+.header-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.filtros {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.filtros button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+#filtroDisponiveis {
+    background-color: #22c55e;
+    /* verde */
+    color: white;
+}
+
+#mostrarTodos {
+    background-color: #2563eb;
+    /* azul */
+    color: white;
+}
+
+.filtros button:hover {
+    opacity: 0.9;
+}
+
+.quarto-card {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.4);
+}
+
+optgroup {
+    font-weight: bold;
+    color: #444;
+    background: #f7f7f7;
+    padding: 4px 0;
+}
+
+option {
+    padding: 8px;
 }

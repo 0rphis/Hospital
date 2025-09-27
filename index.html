@@ -10,32 +10,33 @@
         <header>
             <!-- Botão para abrir a aba lateral -->
             <button id="openBtn" class="open-btn" onclick="toggleSidebar(true)">🔍 Pesquisar</button>
+            <button id="closeBtnTop" class="close-btn-top" onclick="toggleSidebar(false)"
+                style="display:none">✖</button>
+
+            <!-- Botão para fechar (X) -->
+            <button id="closeBtn" class="close-btn-top" onclick="toggleSidebar(false)">✖</button>
 
             <!-- Fundo escurecido -->
             <div id="overlay" class="overlay" onclick="toggleSidebar(false)"></div>
 
-            <!-- Aba lateral -->
+            <!-- Sidebar -->
             <div id="sidebar" class="sidebar">
                 <div class="sidebar-header">
                     <h2>Pesquisar Paciente</h2>
-                    <button class="close-btn" onclick="toggleSidebar(false)">✖</button>
                 </div>
 
                 <form>
-                    <!-- CPF -->
                     <label for="cpf">CPF:</label>
                     <input type="text" id="cpf" name="cpf" maxlength="11" placeholder="Somente números"
                         pattern="\d{11}">
 
-                    <!-- Nome -->
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite o nome">
-
-                    <!-- Botão pesquisar -->
 
                     <button type="submit" class="search-btn">Pesquisar</button>
                 </form>
             </div>
+
 
             <h1 class="title">Hospital de Clínicas Ijuí</h1>
 
@@ -57,6 +58,8 @@
                                 <p>Tipo: Isolamento</p>
                                 <p>Gênero: Masculino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 101B - Disponível -->
@@ -70,6 +73,8 @@
                                 <p>Tipo: Comum</p>
                                 <p>Gênero: Masculino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 102A - Ocupado -->
@@ -83,6 +88,8 @@
                                 <p>Tipo: Isolamento</p>
                                 <p>Gênero: Feminino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 201A - Disponível (Dor) -->
@@ -96,6 +103,8 @@
                                 <p>Tipo: Comum</p>
                                 <p>Gênero: Feminino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 202B - Ocupado (Coração) -->
@@ -109,6 +118,8 @@
                                 <p>Tipo: Isolamento</p>
                                 <p>Gênero: Masculino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 301A - Disponível (Coração) -->
@@ -122,6 +133,8 @@
                                 <p>Tipo: Comum</p>
                                 <p>Gênero: Masculino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 302B - Ocupado (Oncologia) -->
@@ -135,6 +148,8 @@
                                 <p>Tipo: Isolamento</p>
                                 <p>Gênero: Feminino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 401A - UTI (Disponível) -->
@@ -148,6 +163,8 @@
                                 <p>Tipo: Especial</p>
                                 <p>Gênero: Feminino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 401B - UTI (Ocupado) -->
@@ -161,6 +178,8 @@
                                 <p>Tipo: Especial</p>
                                 <p>Gênero: Masculino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 501A - Disponível (Pulmão) -->
@@ -174,6 +193,8 @@
                                 <p>Tipo: Comum</p>
                                 <p>Gênero: Masculino</p>
                             </div>
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
 
                         <!-- Quarto 502B - Ocupado (Dor) -->
@@ -187,12 +208,165 @@
                                 <p>Tipo: Isolamento</p>
                                 <p>Gênero: Feminino</p>
                             </div>
+                            <div class="quarto-footer">
+                            <span class="estimativa">Estimativa de alta: <strong>10/10/2025</strong></span>
+                            <span class="editar" title="Editar">✏️</span>
                         </div>
-
-                        <a href="predio.html"><button>Adicionar paciente</button></a>
-
+                    </div>
 
 
-                        <script src="script.js"></script>
+                <div class="bottom-buttons">
+    <!-- Botão para abrir a página do prédio -->
+    <a href="predio.html">
+        <button class="ver-predio">🏥 Ver Prédio</button>
+        
+    </a>
+
+    <!-- Botão separado para abrir o painel lateral de adicionar paciente -->
+    <button id="openBtn" class="add-paciente" onclick="toggleSidebar(true)">➕ Adicionar Paciente</button>
+</div>
+
+<!-- Botão X que aparece no topo quando a sidebar abre -->
+<button id="closeBtnTop" class="close-btn-top" onclick="toggleSidebar(false)" style="display:none">✖</button>
+
+<!-- Fundo escurecido -->
+<div id="overlay" class="overlay" onclick="toggleSidebar(false)"></div>
+
+<!-- Sidebar para adicionar paciente -->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <h2>Adicionar Paciente</h2>
+    </div>
+
+    <section class="add-room-section">
+    <h2>Adicionar Novo Paciente</h2>
+    <form id="addRoomForm">
+
+        <!-- Seleção de Quarto -->
+        <label for="quartoId">Quarto</label>
+        <select id="quartoId" name="quartoId" required>
+            <option value="">Selecione o quarto</option>
+
+            <optgroup label="Andar 1 — Pulmão">
+                <option value="101A">101A — Disponível</option>
+                <option value="101B">101B — Ocupado</option>
+                <option value="102A">102A — Disponível</option>
+            </optgroup>
+
+            <optgroup label="Andar 2 — Cirurgia / Coração">
+                <option value="201A">201A — Disponível (Cirurgia)</option>
+                <option value="202B">202B — Ocupado (Coração)</option>
+            </optgroup>
+
+            <optgroup label="UTI">
+                <option value="401A">401A — Disponível (UTI)</option>
+                <option value="401B">401B — Ocupado (UTI)</option>
+            </optgroup>
+        </select>
+
+        <!-- Tipo de Doença / Condição -->
+        <label for="doenca">Tipo de Doença/Condição:</label>
+        <select id="doenca" name="doenca" required>
+            <option value="">Selecione uma doença</option>
+
+            <!-- Pós-operatório -->
+            <optgroup label="Pós-operatório">
+                <option value="hernioplastia">Hernioplastia</option>
+                <option value="apendicectomia-peritonite">Apendicectomia com peritonite</option>
+                <option value="tireoidectomia">Tireoidectomia</option>
+                <option value="artroplastia-quadril">Artroplastia de quadril</option>
+                <option value="colectomia-diverticulite">Colectomia por diverticulite supurada</option>
+                <option value="mastectomia">Mastectomia</option>
+                <option value="colecistectomia-colangite">Colecistectomia com colangite</option>
+                <option value="craniotomia-eletiva">Craniotomia eletiva</option>
+                <option value="ulcera-perfurada">Cirurgia de úlcera perfurada infectada</option>
+            </optgroup>
+
+            <!-- Doenças Respiratórias -->
+            <optgroup label="Doenças Respiratórias">
+                <option value="pneumonia-bacteriana">Pneumonia bacteriana com escarro purulento</option>
+                <option value="tuberculose">Tuberculose ativa</option>
+                <option value="covid19">COVID-19</option>
+                <option value="influenza-grave">Influenza grave</option>
+                <option value="bronquiolite-viral">Bronquiolite viral aguda</option>
+            </optgroup>
+
+            <!-- Infecções Gastrointestinais -->
+            <optgroup label="Infecções Gastrointestinais">
+                <option value="clostridium">Diarreia por Clostridioides difficile</option>
+                <option value="rotavirus">Rotavírus</option>
+                <option value="norovirus">Norovírus</option>
+                <option value="salmonella">Salmonella</option>
+                <option value="shigella">Shigella</option>
+            </optgroup>
+
+            <!-- Germes Multirresistentes -->
+            <optgroup label="Germes Multirresistentes">
+                <option value="mrsa">MRSA (Staphylococcus aureus resistente à oxacilina)</option>
+                <option value="vre">VRE (Enterococcus resistente à vancomicina)</option>
+                <option value="kpc">KPC (Klebsiella pneumoniae carbapenemase)</option>
+                <option value="acinetobacter">Acinetobacter baumannii multirresistente</option>
+                <option value="pseudomonas">Pseudomonas aeruginosa multirresistente</option>
+            </optgroup>
+
+            <!-- Outros -->
+            <optgroup label="Outros Contextos de Risco">
+                <option value="ferida-infectada">Ferida infectada com secreção purulenta</option>
+                <option value="grandes-queimados">Grandes queimados</option>
+                <option value="imunossuprimido">Imunossuprimidos ou neutropênicos</option>
+                <option value="transplantado">Transplantados em contato com infectados</option>
+                <option value="incontinencia-infeccao">Incontinência fecal/urinária com infecção ativa</option>
+            </optgroup>
+        </select>
+
+        <!-- Status do Quarto -->
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="">Selecione</option>
+            <option value="Disponível">Disponível</option>
+            <option value="Ocupado">Ocupado</option>
+        </select>
+
+        <!-- Gravidade -->
+        <label for="gravidade">Gravidade:</label>
+        <select id="gravidade" name="gravidade" required>
+            <option value="">Selecione</option>
+            <option value="Comum">Comum</option>
+            <option value="Isolamento">Isolamento</option>
+            <option value="Pós-operatório">Pós-operatório</option>
+            <option value="Crítico">Crítico (UTI)</option>
+        </select>
+
+        <!-- Gênero -->
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero" required>
+            <option value="">Selecione</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+
+        <!-- Botão de envio -->
+        <button type="submit">Adicionar Paciente</button>
+    </form>
+</section>
+
+
+        <!-- Botão de envio -->
+        <button type="submit" class="submit-btn">Adicionar</button>
+    </form>
+</div>
+
+
+                        
+                </main>
+
+
+
+
+
+
+
+
+                <script src="script.js"></script>
     </body>
 </html>

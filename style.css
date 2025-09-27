@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,6 +8,7 @@
 
 
 /* ===== Botão de abrir ===== */
+/* Botão de abrir (pesquisar) */
 .open-btn {
     position: fixed;
     top: 20px;
@@ -19,16 +20,49 @@
     font-size: 1.1rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition:  0.6s ; /* Transição suave */
     z-index: 1001;
     align-items: center;
     display: flex;
     gap: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
 
+/* Quando escondido */
+.open-btn.hidden {
+    opacity: 0;
+    pointer-events: none; /* evita cliques enquanto escondido */
+}
+
+.close-btn-top {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: #333; /* cinza escuro */
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    z-index: 1005;
+    display: none; /* começa escondido */
+    transition: color 0.2s ease;
+}
+
+.close-btn-top:hover {
+    color: #000; /* fica mais escuro no hover */
+}
+
+.sidebar {
+    right: -350px;
+    /* Sidebar fica oculta */
+    transition: right 0.4s ease;
+}
+
+.sidebar.active {
+    right: 0;
+    /* Sidebar visível */
 }
 
 .open-btn:hover {
@@ -135,7 +169,7 @@
     background: #1d4ed8;
 }
 
-.title{
+.title {
     width: 100%;
     padding-top: 10px;
     display: flex;
@@ -150,13 +184,13 @@
 
 }
 
-header{
+header {
     height: 90px;
     margin-bottom: 30px;
     border-bottom: 2px solid #91d1f39f;
 }
 
-h2{
+h2 {
     font-size: 1.6rem;
     margin-bottom: 20px;
     text-align: center;
@@ -285,17 +319,21 @@ footer {
 
 /* ======= GÊNERO ======= */
 .Masculino {
-    border-left: 5px solid #3b82f6; /* Azul */
+    border-left: 5px solid #3b82f6;
+    /* Azul */
     padding-left: 10px;
 }
+
 .Feminino {
-    border-left: 5px solid #ec4899; /* Rosa */
+    border-left: 5px solid #ec4899;
+    /* Rosa */
     padding-left: 10px;
 }
 
 
 /* ======= ÁREAS ESPECIAIS ======= */
 .disponivel {
+    order: -1;
     background: #aafdc17b;
 }
 
@@ -306,3 +344,214 @@ footer {
 .restrito {
     background: #f7808096;
 }
+
+
+/* Botao adiciona */
+.add-paciente {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px; /* formato pílula */
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+/* Efeito ao passar o mouse */
+.add-paciente:hover {
+    background: linear-gradient(135deg, #1d4ed8, #153eaf);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 14px rgba(37, 99, 235, 0.5);
+}
+
+/* Efeito ao clicar */
+.add-paciente:active {
+    transform: translateY(0px);
+    box-shadow: 0px 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Remove underline e efeitos padrão do link */
+.link-predio {
+    text-decoration: none;
+}
+
+
+
+
+/* ===== Sidebar lateral ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar-header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+/* ===== Fundo escurecido ===== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 900;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== Botão de fechar (X) ===== */
+.close-btn-top {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none; /* Remove o fundo */
+    color: #333; /* Cor do X */
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    z-index: 1005;
+    transition: 2.6s;
+}
+
+/* Animação ao passar o mouse */
+.close-btn-top:hover {
+    color: #000; /* Fica mais escuro no hover */
+    transform: rotate(90deg); /* Pequeno giro */
+}
+
+/* ===== Formulário ===== */
+.sidebar form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.sidebar input,
+.sidebar select,
+.sidebar textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Botão dentro do formulário */
+.submit-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* Rodapé do card */
+.quarto-footer {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Texto da estimativa */
+.quarto-footer .estimativa {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Ícone de edição (caneta) */
+.quarto-footer .editar {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+/* Animação ao passar o mouse */
+.quarto-footer .editar:hover {
+    animation: balancar 0.4s ease-in-out infinite alternate;
+    color: #2563eb;
+}
+
+@keyframes balancar {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.ver-predio {
+    position: fixed; /* Fixa na tela */
+    bottom: 90px; /* Distância da borda inferior */
+    right: 20px; /* Distância da borda direita */
+    
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 1rem;    
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    z-index: 1000; /* Garante que fica acima de outros elementos */
+}
+
+/* Efeito ao passar o mouse */
+.ver-predio:hover {
+    background: #1e40af;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.5);
+}
+
+
